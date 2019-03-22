@@ -1,0 +1,737 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55EBF9782241D9FC00A986DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EBF9772241D9FC00A986DE /* AppDelegate.m */; };
+		55EBF97E2241D9FC00A986DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55EBF97C2241D9FC00A986DE /* Main.storyboard */; };
+		55EBF9802241D9FD00A986DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55EBF97F2241D9FD00A986DE /* Assets.xcassets */; };
+		55EBF9832241D9FD00A986DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55EBF9812241D9FD00A986DE /* LaunchScreen.storyboard */; };
+		55EBF9862241D9FD00A986DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EBF9852241D9FD00A986DE /* main.m */; };
+		55EBF9902241D9FE00A986DE /* BadgingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EBF98F2241D9FE00A986DE /* BadgingTests.m */; };
+		55EBF99B2241D9FE00A986DE /* BadgingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EBF99A2241D9FE00A986DE /* BadgingUITests.m */; };
+		5922BAD25ACF6887B735005E /* libPods-BadgingUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5905F5470AE6E278C7248C99 /* libPods-BadgingUITests.a */; };
+		71AE02F02242CED50042E1D4 /* OpenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE02EF2242CED50042E1D4 /* OpenViewController.m */; };
+		71AE02F32242CEE40042E1D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE02F22242CEE40042E1D4 /* LoginViewController.m */; };
+		71AE02F62242CEF20042E1D4 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE02F52242CEF20042E1D4 /* ScanViewController.m */; };
+		71AE02F92242CFBE0042E1D4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AE02F82242CFBE0042E1D4 /* AVFoundation.framework */; };
+		A6EE67F985A0930B646D2696 /* libPods-Badging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE84F62DED22491E09D35A2 /* libPods-Badging.a */; };
+		AD7D9FE28F3900170E59DFC2 /* libPods-BadgingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DE61CD3CA6FC99C1E658AA /* libPods-BadgingTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55EBF98C2241D9FE00A986DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55EBF96B2241D9FC00A986DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55EBF9722241D9FC00A986DE;
+			remoteInfo = Badging;
+		};
+		55EBF9972241D9FE00A986DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55EBF96B2241D9FC00A986DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55EBF9722241D9FC00A986DE;
+			remoteInfo = Badging;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0EB05972C675A1C5B99AFF89 /* Pods-Badging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Badging.debug.xcconfig"; path = "Target Support Files/Pods-Badging/Pods-Badging.debug.xcconfig"; sourceTree = "<group>"; };
+		1D83F1CE8129B765443984FB /* Pods-BadgingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgingUITests.debug.xcconfig"; path = "Target Support Files/Pods-BadgingUITests/Pods-BadgingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		53DE61CD3CA6FC99C1E658AA /* libPods-BadgingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BadgingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55EBF9732241D9FC00A986DE /* Badging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Badging.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55EBF9762241D9FC00A986DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		55EBF9772241D9FC00A986DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		55EBF97D2241D9FC00A986DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55EBF97F2241D9FD00A986DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55EBF9822241D9FD00A986DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55EBF9842241D9FD00A986DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55EBF9852241D9FD00A986DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		55EBF98B2241D9FE00A986DE /* BadgingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BadgingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55EBF98F2241D9FE00A986DE /* BadgingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgingTests.m; sourceTree = "<group>"; };
+		55EBF9912241D9FE00A986DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55EBF9962241D9FE00A986DE /* BadgingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BadgingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55EBF99A2241D9FE00A986DE /* BadgingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgingUITests.m; sourceTree = "<group>"; };
+		55EBF99C2241D9FE00A986DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5905F5470AE6E278C7248C99 /* libPods-BadgingUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BadgingUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71AE02EE2242CED50042E1D4 /* OpenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenViewController.h; sourceTree = "<group>"; };
+		71AE02EF2242CED50042E1D4 /* OpenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenViewController.m; sourceTree = "<group>"; };
+		71AE02F12242CEE40042E1D4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		71AE02F22242CEE40042E1D4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		71AE02F42242CEF20042E1D4 /* ScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		71AE02F52242CEF20042E1D4 /* ScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		71AE02F82242CFBE0042E1D4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8675ABAC6CA7A083F9E3D5CB /* Pods-Badging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Badging.release.xcconfig"; path = "Target Support Files/Pods-Badging/Pods-Badging.release.xcconfig"; sourceTree = "<group>"; };
+		9D658B3E37ABD4400F43D6E6 /* Pods-BadgingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgingUITests.release.xcconfig"; path = "Target Support Files/Pods-BadgingUITests/Pods-BadgingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A60FC5722FAF7752E6B1EA1F /* Pods-BadgingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgingTests.release.xcconfig"; path = "Target Support Files/Pods-BadgingTests/Pods-BadgingTests.release.xcconfig"; sourceTree = "<group>"; };
+		E8E5C94EBA5E052A0495A8E9 /* Pods-BadgingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgingTests.debug.xcconfig"; path = "Target Support Files/Pods-BadgingTests/Pods-BadgingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EAE84F62DED22491E09D35A2 /* libPods-Badging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Badging.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55EBF9702241D9FC00A986DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71AE02F92242CFBE0042E1D4 /* AVFoundation.framework in Frameworks */,
+				A6EE67F985A0930B646D2696 /* libPods-Badging.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55EBF9882241D9FE00A986DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7D9FE28F3900170E59DFC2 /* libPods-BadgingTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55EBF9932241D9FE00A986DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5922BAD25ACF6887B735005E /* libPods-BadgingUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55EBF96A2241D9FC00A986DE = {
+			isa = PBXGroup;
+			children = (
+				55EBF9752241D9FC00A986DE /* Badgingx */,
+				55EBF98E2241D9FE00A986DE /* BadgingTests */,
+				55EBF9992241D9FE00A986DE /* BadgingUITests */,
+				55EBF9742241D9FC00A986DE /* Products */,
+				71AE02F72242CFBD0042E1D4 /* Frameworks */,
+				FD6DBCB5CFD69300EB5BCACD /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		55EBF9742241D9FC00A986DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55EBF9732241D9FC00A986DE /* Badging.app */,
+				55EBF98B2241D9FE00A986DE /* BadgingTests.xctest */,
+				55EBF9962241D9FE00A986DE /* BadgingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55EBF9752241D9FC00A986DE /* Badgingx */ = {
+			isa = PBXGroup;
+			children = (
+				55EBF9762241D9FC00A986DE /* AppDelegate.h */,
+				55EBF9772241D9FC00A986DE /* AppDelegate.m */,
+				55EBF97C2241D9FC00A986DE /* Main.storyboard */,
+				55EBF97F2241D9FD00A986DE /* Assets.xcassets */,
+				55EBF9812241D9FD00A986DE /* LaunchScreen.storyboard */,
+				55EBF9842241D9FD00A986DE /* Info.plist */,
+				55EBF9852241D9FD00A986DE /* main.m */,
+				71AE02EE2242CED50042E1D4 /* OpenViewController.h */,
+				71AE02EF2242CED50042E1D4 /* OpenViewController.m */,
+				71AE02F12242CEE40042E1D4 /* LoginViewController.h */,
+				71AE02F22242CEE40042E1D4 /* LoginViewController.m */,
+				71AE02F42242CEF20042E1D4 /* ScanViewController.h */,
+				71AE02F52242CEF20042E1D4 /* ScanViewController.m */,
+			);
+			path = Badgingx;
+			sourceTree = "<group>";
+		};
+		55EBF98E2241D9FE00A986DE /* BadgingTests */ = {
+			isa = PBXGroup;
+			children = (
+				55EBF98F2241D9FE00A986DE /* BadgingTests.m */,
+				55EBF9912241D9FE00A986DE /* Info.plist */,
+			);
+			path = BadgingTests;
+			sourceTree = "<group>";
+		};
+		55EBF9992241D9FE00A986DE /* BadgingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				55EBF99A2241D9FE00A986DE /* BadgingUITests.m */,
+				55EBF99C2241D9FE00A986DE /* Info.plist */,
+			);
+			path = BadgingUITests;
+			sourceTree = "<group>";
+		};
+		71AE02F72242CFBD0042E1D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71AE02F82242CFBE0042E1D4 /* AVFoundation.framework */,
+				EAE84F62DED22491E09D35A2 /* libPods-Badging.a */,
+				53DE61CD3CA6FC99C1E658AA /* libPods-BadgingTests.a */,
+				5905F5470AE6E278C7248C99 /* libPods-BadgingUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD6DBCB5CFD69300EB5BCACD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0EB05972C675A1C5B99AFF89 /* Pods-Badging.debug.xcconfig */,
+				8675ABAC6CA7A083F9E3D5CB /* Pods-Badging.release.xcconfig */,
+				E8E5C94EBA5E052A0495A8E9 /* Pods-BadgingTests.debug.xcconfig */,
+				A60FC5722FAF7752E6B1EA1F /* Pods-BadgingTests.release.xcconfig */,
+				1D83F1CE8129B765443984FB /* Pods-BadgingUITests.debug.xcconfig */,
+				9D658B3E37ABD4400F43D6E6 /* Pods-BadgingUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55EBF9722241D9FC00A986DE /* Badging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55EBF99F2241D9FE00A986DE /* Build configuration list for PBXNativeTarget "Badging" */;
+			buildPhases = (
+				44D97E4FF53AB86FBF071B95 /* [CP] Check Pods Manifest.lock */,
+				55EBF96F2241D9FC00A986DE /* Sources */,
+				55EBF9702241D9FC00A986DE /* Frameworks */,
+				55EBF9712241D9FC00A986DE /* Resources */,
+				2A77E67051ED0AAD4776C177 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Badging;
+			productName = Badging;
+			productReference = 55EBF9732241D9FC00A986DE /* Badging.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55EBF98A2241D9FE00A986DE /* BadgingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55EBF9A22241D9FE00A986DE /* Build configuration list for PBXNativeTarget "BadgingTests" */;
+			buildPhases = (
+				F98F540A73C860031C2AD0CA /* [CP] Check Pods Manifest.lock */,
+				55EBF9872241D9FE00A986DE /* Sources */,
+				55EBF9882241D9FE00A986DE /* Frameworks */,
+				55EBF9892241D9FE00A986DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55EBF98D2241D9FE00A986DE /* PBXTargetDependency */,
+			);
+			name = BadgingTests;
+			productName = BadgingTests;
+			productReference = 55EBF98B2241D9FE00A986DE /* BadgingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		55EBF9952241D9FE00A986DE /* BadgingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55EBF9A52241D9FE00A986DE /* Build configuration list for PBXNativeTarget "BadgingUITests" */;
+			buildPhases = (
+				8D2B4C5D0446B173F8A59BA6 /* [CP] Check Pods Manifest.lock */,
+				55EBF9922241D9FE00A986DE /* Sources */,
+				55EBF9932241D9FE00A986DE /* Frameworks */,
+				55EBF9942241D9FE00A986DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55EBF9982241D9FE00A986DE /* PBXTargetDependency */,
+			);
+			name = BadgingUITests;
+			productName = BadgingUITests;
+			productReference = 55EBF9962241D9FE00A986DE /* BadgingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55EBF96B2241D9FC00A986DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Los Altos Hacks";
+				TargetAttributes = {
+					55EBF9722241D9FC00A986DE = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					55EBF98A2241D9FE00A986DE = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 55EBF9722241D9FC00A986DE;
+					};
+					55EBF9952241D9FE00A986DE = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 55EBF9722241D9FC00A986DE;
+					};
+				};
+			};
+			buildConfigurationList = 55EBF96E2241D9FC00A986DE /* Build configuration list for PBXProject "Badging" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55EBF96A2241D9FC00A986DE;
+			productRefGroup = 55EBF9742241D9FC00A986DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55EBF9722241D9FC00A986DE /* Badging */,
+				55EBF98A2241D9FE00A986DE /* BadgingTests */,
+				55EBF9952241D9FE00A986DE /* BadgingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55EBF9712241D9FC00A986DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55EBF9832241D9FD00A986DE /* LaunchScreen.storyboard in Resources */,
+				55EBF9802241D9FD00A986DE /* Assets.xcassets in Resources */,
+				55EBF97E2241D9FC00A986DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55EBF9892241D9FE00A986DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55EBF9942241D9FE00A986DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A77E67051ED0AAD4776C177 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Badging/Pods-Badging-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Badging/Pods-Badging-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44D97E4FF53AB86FBF071B95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Badging-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D2B4C5D0446B173F8A59BA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BadgingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F98F540A73C860031C2AD0CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BadgingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55EBF96F2241D9FC00A986DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71AE02F02242CED50042E1D4 /* OpenViewController.m in Sources */,
+				71AE02F62242CEF20042E1D4 /* ScanViewController.m in Sources */,
+				55EBF9862241D9FD00A986DE /* main.m in Sources */,
+				55EBF9782241D9FC00A986DE /* AppDelegate.m in Sources */,
+				71AE02F32242CEE40042E1D4 /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55EBF9872241D9FE00A986DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55EBF9902241D9FE00A986DE /* BadgingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55EBF9922241D9FE00A986DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55EBF99B2241D9FE00A986DE /* BadgingUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55EBF98D2241D9FE00A986DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55EBF9722241D9FC00A986DE /* Badging */;
+			targetProxy = 55EBF98C2241D9FE00A986DE /* PBXContainerItemProxy */;
+		};
+		55EBF9982241D9FE00A986DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55EBF9722241D9FC00A986DE /* Badging */;
+			targetProxy = 55EBF9972241D9FE00A986DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		55EBF97C2241D9FC00A986DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55EBF97D2241D9FC00A986DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		55EBF9812241D9FD00A986DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55EBF9822241D9FD00A986DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		55EBF99D2241D9FE00A986DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		55EBF99E2241D9FE00A986DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55EBF9A02241D9FE00A986DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EB05972C675A1C5B99AFF89 /* Pods-Badging.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2JD4G5SY9K;
+				INFOPLIST_FILE = "$(SRCROOT)/Badgingx/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.Badging;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55EBF9A12241D9FE00A986DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8675ABAC6CA7A083F9E3D5CB /* Pods-Badging.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2JD4G5SY9K;
+				INFOPLIST_FILE = "$(SRCROOT)/Badgingx/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.Badging;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		55EBF9A32241D9FE00A986DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8E5C94EBA5E052A0495A8E9 /* Pods-BadgingTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BadgingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.BadgingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Badging.app/Badging";
+			};
+			name = Debug;
+		};
+		55EBF9A42241D9FE00A986DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A60FC5722FAF7752E6B1EA1F /* Pods-BadgingTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BadgingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.BadgingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Badging.app/Badging";
+			};
+			name = Release;
+		};
+		55EBF9A62241D9FE00A986DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D83F1CE8129B765443984FB /* Pods-BadgingUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BadgingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.BadgingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Badging;
+			};
+			name = Debug;
+		};
+		55EBF9A72241D9FE00A986DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D658B3E37ABD4400F43D6E6 /* Pods-BadgingUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BadgingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.BadgingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Badging;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55EBF96E2241D9FC00A986DE /* Build configuration list for PBXProject "Badging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55EBF99D2241D9FE00A986DE /* Debug */,
+				55EBF99E2241D9FE00A986DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55EBF99F2241D9FE00A986DE /* Build configuration list for PBXNativeTarget "Badging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55EBF9A02241D9FE00A986DE /* Debug */,
+				55EBF9A12241D9FE00A986DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55EBF9A22241D9FE00A986DE /* Build configuration list for PBXNativeTarget "BadgingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55EBF9A32241D9FE00A986DE /* Debug */,
+				55EBF9A42241D9FE00A986DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55EBF9A52241D9FE00A986DE /* Build configuration list for PBXNativeTarget "BadgingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55EBF9A62241D9FE00A986DE /* Debug */,
+				55EBF9A72241D9FE00A986DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55EBF96B2241D9FC00A986DE /* Project object */;
+}
