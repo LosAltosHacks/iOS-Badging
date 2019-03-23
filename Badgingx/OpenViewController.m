@@ -20,8 +20,10 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if([defaults objectForKey:@"authToken"] != nil && [[defaults objectForKey:@"dateAssn"] timeIntervalSinceNow] < 14400)
+    if([defaults objectForKey:@"authToken"] == NULL || [[defaults objectForKey:@"assnTime"] timeIntervalSinceNow] < -14400) {
+        NSLog(@"%f", [[defaults objectForKey:@"assnTime"] timeIntervalSinceNow]);
         [self performSegueWithIdentifier:@"toLogin" sender:self];
+    }
     else
         NSLog(@"Proceeding with stored token.");
 }
@@ -45,5 +47,8 @@
 }
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return [_pickerOptions objectAtIndex:row];
+}
+- (IBAction)stepperChange:(UIStepper *)sender {
+    [self.stepperValue setText:[NSString stringWithFormat:@"%1.f", [sender value]]];
 }
 @end

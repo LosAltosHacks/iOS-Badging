@@ -39,27 +39,56 @@
                                     <segue destination="wq9-t9-5t8" kind="modal" id="Zh1-sJ-6T5"/>
                                 </connections>
                             </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="cND-oA-6it">
+                                <rect key="frame" x="265" y="271" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepperChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="70K-jh-gWW"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrW-FF-Fb8">
+                                <rect key="frame" x="16" y="275" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWn-Tj-ib7">
+                                <rect key="frame" x="201" y="275" width="56" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="gID-3h-s5O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="UrW-FF-Fb8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2gX-AF-Mcx"/>
                             <constraint firstItem="pCQ-v8-RQP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7kI-pE-8XH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OwV-Ff-m9X" secondAttribute="bottom" constant="220" id="9J1-Gr-ert"/>
                             <constraint firstItem="pCQ-v8-RQP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="GRJ-C7-kOH"/>
                             <constraint firstItem="xc1-ba-ddq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GcD-GR-mii"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cND-oA-6it" secondAttribute="trailing" constant="16" id="KFi-SD-Mvi"/>
+                            <constraint firstItem="kWn-Tj-ib7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UrW-FF-Fb8" secondAttribute="trailing" constant="8" symbolic="YES" id="Ukm-Av-X3Y"/>
+                            <constraint firstItem="UrW-FF-Fb8" firstAttribute="top" secondItem="xc1-ba-ddq" secondAttribute="bottom" constant="-8" id="WAk-xh-6Z8"/>
+                            <constraint firstItem="kWn-Tj-ib7" firstAttribute="centerY" secondItem="cND-oA-6it" secondAttribute="centerY" id="Y4G-Nl-add"/>
                             <constraint firstItem="OwV-Ff-m9X" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aaf-hw-Kv0"/>
                             <constraint firstItem="xc1-ba-ddq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="guk-d4-fSk"/>
                             <constraint firstItem="xc1-ba-ddq" firstAttribute="top" secondItem="pCQ-v8-RQP" secondAttribute="bottom" constant="8" id="pFN-Ia-elW"/>
+                            <constraint firstItem="cND-oA-6it" firstAttribute="top" secondItem="xc1-ba-ddq" secondAttribute="bottom" constant="-12" id="pbt-uf-5BA"/>
+                            <constraint firstItem="cND-oA-6it" firstAttribute="leading" secondItem="kWn-Tj-ib7" secondAttribute="trailing" constant="8" id="peP-z0-1UR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="scanTarget" destination="xc1-ba-ddq" id="yaf-R6-Qhv"/>
+                        <outlet property="stepperValue" destination="kWn-Tj-ib7" id="7Lt-L4-QJt"/>
                         <segue destination="BuY-K0-fQO" kind="modal" identifier="toLogin" id="nUQ-IT-sgc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80.625" y="148.96333333333331"/>
+            <point key="canvasLocation" x="79.200000000000003" y="148.87556221889056"/>
         </scene>
         <!--Scan View Controller-->
         <scene sceneID="9c6-OB-JlP">

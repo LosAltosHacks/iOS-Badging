@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OpenViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 @property (strong, nonatomic) IBOutlet UIPickerView *scanTarget;
-@property (nonatomic) NSDictionary *pickerOptions;
+@property (nonatomic) NSArray *pickerOptions;
+@property (strong, nonatomic) IBOutlet UILabel *stepperValue;
 
 @end
 

@@ -16,17 +16,14 @@
     NSDate *lastSuccess;
     NSMutableArray *scannedThisSession;
     BOOL inProgress;
-    NSNumber selectedMeal;
+    NSNumber *selectedMeal;
+    NSNumber *servingNumber;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //load NFC
-    scannedThisSession = [[NSMutableArray alloc] init];
-    OpenViewController *parent = (OpenViewController *)self.presentingViewController;
-    NSUInteger selectedRow = [parent.scanTarget selectedRowInComponent:0];
-    selectedMeal = [[NSNumber alloc] initWithInteger:selectedRow+1];
     //https://www.appcoda.com/qr-code-ios-programming-tutorial/
     _isReading = NO;
     inProgress = NO;
@@ -64,7 +61,16 @@
     [_capDevice unlockForConfiguration];
     
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    scannedThisSession = [[NSMutableArray alloc] init];
+    OpenViewController *parent = (OpenViewController *)self.presentingViewController;
+    NSLog(@"%@", parent);
+    NSUInteger selectedRow = [parent.scanTarget selectedRowInComponent:0];
+    selectedMeal = [[NSNumber alloc] initWithInteger:selectedRow+1];
+    NSLog(@"%@", selectedMeal);
+    //number of servings:
+    servingNumber = [[NSNumber alloc] initWithInteger:[[parent.stepperValue text] integerValue]];
+}
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     if(lastSuccess == nil) {
         lastSuccess = [NSDate date];
@@ -74,19 +80,37 @@
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
             //QR code read!
 //            NSString *reader = [metadataObj stringValue];
-            if([lastSuccess timeIntervalSinceNow] >= -0.25) {
+            if([lastSuccess timeIntervalSinceNow] >= -0.05) {
                 return;
             }
             if(inProgress)
                 return;
+            inProgress = YES;
             lastSuccess = [NSDate date];
             NSLog(@"QR CODE: %@",  [metadataObj stringValue]);
-            if([scannedThisSession containsObject:[metadataObj stringValue]]) {
-                //dupe scan!
-                //ignore for now
+            if([[self.scanDetail_id text] isEqualToString:[metadataObj stringValue]]) {
+                inProgress = NO;
                 return;
             }
-            inProgress = YES;
+            if([scannedThisSession containsObject:[metadataObj stringValue]]) {
+                //dupe scan!
+                NSLog(@"Dupe scan");
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.scanDetail_id setText:[metadataObj stringValue]];
+                    [self.scanDetail_resolved setText:@"Scanned This Session."];
+                    [UIView animateWithDuration:0.3f animations:^{
+                        [self.popupView setAlpha:0.75f];
+                    } completion:^(BOOL finished) {
+                        [UIView animateWithDuration:0.3f delay:1.3f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                            [self.popupView setAlpha:0.0f];
+                        } completion:^(BOOL finished) {
+                            self->inProgress = NO;
+
+                        }];
+                    }];
+                });
+                return;
+            }
             [scannedThisSession addObject:[metadataObj stringValue]];
             //overlay popup
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -99,42 +123,63 @@
                 } completion:nil]; //leave on screen until it clears
             });
             //Call the API with this object to verify
-            NSString *jwtkey = [[NSUserDefaults standardUserDefaults] objectForKey:@"authKey"];
+            NSString *jwtkey = [[NSUserDefaults standardUserDefaults] objectForKey:@"authToken"];
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-            [request setURL:[NSURL URLWithString:@"https://api.losaltoshacks.com/registration/v1/search"]];
-            [request setHTTPMethod:@"POST"];
+            [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.losaltoshacks.com/registration/v1/history/%@", [metadataObj stringValue]]]];
+            [request setHTTPMethod:@"GET"];
             [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-            [request setValue:[NSString stringWithFormat:@"Bearer %@", jwtkey] forHTTPHeaderField:@"Content-Type"];
-            NSData *jsonObj = [NSJSONSerialization dataWithJSONObject:@{@"query": @"d5a87081-2b0a-45c6-9bec-d75c22a13742"} options:nil error:nil];
-            [request setHTTPBody:jsonObj];
-            NSLog(@"Data: %@", [[NSString alloc] initWithData:jsonObj encoding:NSUTF8StringEncoding]);
+            [request setValue:[NSString stringWithFormat:@"Bearer %@", jwtkey] forHTTPHeaderField:@"Authorization"];
             NSURLResponse *response;
             NSError *err;
             NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
             
             NSString *resp = [[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
-            NSLog(@"response: %@",resp);
-
+            NSArray *responseList = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:nil];
+            NSDictionary *thisUser = [responseList objectAtIndex:0];
+            NSString *fullname = [NSString stringWithFormat:@"%@ %@", [thisUser objectForKey:@"first_name"], [thisUser objectForKey:@"surname"]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.scanDetail_resolved setText:fullname];
+            });
+            
             //Add meal
             [request setURL:[NSURL URLWithString:@"https://api.losaltoshacks.com/dayof/v1/meal"]];
             [request setHTTPMethod:@"POST"];
             [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-            [request setValue:[NSString stringWithFormat:@"Bearer %@", jwtkey] forHTTPHeaderField:@"Content-Type"];
-            jsonObj = [NSJSONSerialization dataWithJSONObject:@{@"meal_number": selectedMeal, @"badge_data": @"null", @"allowed_servings": @1} options:nil error:nil];
+            [request setValue:[NSString stringWithFormat:@"Bearer %@", jwtkey] forHTTPHeaderField:@"Authorization"];
+            NSDate *jsonObj = [NSJSONSerialization dataWithJSONObject:@{@"meal_number": selectedMeal, @"badge_data": [metadataObj stringValue], @"allowed_servings": servingNumber} options:nil error:nil];
             [request setHTTPBody:jsonObj];
             responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-            
-            resp = [[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
-            NSLog(@"response: %@", resp);
+            responseList = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.scanDetail_resolved setText:fullname];
+            });
+            BOOL approved = NO;
+            NSLog(@"%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+            NSDictionary *responseParsed = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:nil];
+            if([[responseParsed objectForKey:@"status"] isEqualToString:@"ok"])
+                approved = YES;
+            else
+                approved = NO;
+            //if approved:
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if(approved)
+                    [self.scanDetail_statusLabel setText:@"APPROVED"];
+                else
+                    [self.scanDetail_statusLabel setText:@"DENIED"];
+                [UIView animateWithDuration:0.3f animations:^{
+                    if(approved)
+                        self.scanDetail_status.layer.backgroundColor = [UIColor colorWithRed:0.2f green:1.0f blue:0.2f alpha:1.0f].CGColor;
+                    else
+                        self.scanDetail_status.layer.backgroundColor = [UIColor colorWithRed:1.0f green:.2f blue:0.2f alpha:1.0f].CGColor;
 
-            
-            /*
-             [UIView animateWithDuration:0.3f delay:3.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
-             [self.popupView setAlpha:0.0f];
-             }
-             completion:nil];
-             */
-            }
+                } completion:^(BOOL finished){
+                    [UIView animateWithDuration:0.3f delay:1.3f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                        [self.popupView setAlpha:0.0f];
+                    } completion:nil];
+                    self->inProgress = NO;
+                }];
+            });
+        }
     }
 }
 
